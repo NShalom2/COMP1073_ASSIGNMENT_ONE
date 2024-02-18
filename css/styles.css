@@ -1,0 +1,187 @@
+body {
+    margin: 20px 50px;
+    font-family: "Inter", sans-serif;
+}
+
+body h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.container {
+    background: #efdc03;
+    border-radius: 15px;
+    margin: 10px 200px;
+}
+
+.story-teller {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.sentence1 div img,
+.sentence2 div img,
+.sentence3 div img,
+.sentence4 div img,
+.sentence5 div img {
+    height: 85px;
+}
+
+.sentence1 div,
+.sentence2 div,
+.sentence3 div,
+.sentence4 div,
+.sentence5 div {
+    height: 155px;
+}
+
+.sentences {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding: 30px;
+}
+
+.sentence1,
+.sentence2,
+.sentence3,
+.sentence4,
+.sentence5 {
+    padding: 15px;
+    margin: 2px;
+}
+
+.sentence1 {
+    display: flex;
+    flex-direction: column;
+    background: #9331a0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sentence2 {
+    display: flex;
+    flex-direction: column;
+    background: #16a4e2;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sentence3 {
+    display: flex;
+    flex-direction: column;
+    background: #95b806;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sentence4 {
+    display: flex;
+    flex-direction: column;
+    background: #e5a005;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sentence5 {
+    display: flex;
+    flex-direction: column;
+    background: #c32560;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sentenceButtons {
+    display: flex;
+    padding: 40px 0;
+}
+
+.buttons {
+    padding: 10px;
+}
+
+.buttons button {
+    padding: 45px;
+    border-radius: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-1 button {
+    background: #9331a0;
+}
+
+.button-2 button {
+    background: #16a4e2;
+}
+
+.button-3 button {
+    background: #95b806;
+}
+
+.button-4 button {
+    background: #e5a005;
+}
+
+.button-5 button {
+    background: #c32560;
+}
+
+.button-6 button {
+    background: red;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+.button-6,
+.button-7 {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-7 button {
+    background: aqua;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+.other-buttons {
+    margin-top: 55%;
+    float: right;
+    margin-right: 75px;
+    display: flex;
+}
+
+figure {
+    margin: 15px;
+}
+
+figcaption {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.outputText div {
+    padding: 50px 10px;
+}
+
+.outputText div span {
+    font-size: 20px;
+}
+
+#finalSentence {
+    font-size: 25px;
+}
+
+.audio {
+    display: none;
+}
