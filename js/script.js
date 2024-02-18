@@ -1,3 +1,5 @@
+// Declare all buttons that will be used in the HTML
+
 const firstButton = document.getElementById("button-1");
 const secondButton = document.getElementById("button-2");
 const thirdButton = document.getElementById("button-3");
@@ -5,9 +7,14 @@ const fourthButton = document.getElementById("button-4");
 const fifthButton = document.getElementById("button-5");
 const sixthButton = document.getElementById("finalButton");
 const randomButton = document.getElementById("randomButton")
+
+// Declare the word containers
+
 const firstWord = document.getElementById("firstWord");
 const finalSentence = document.getElementById("finalSentence");
 const randomSentence = document.getElementById("randomSentence");
+
+// All the sound files used in the code
 
 const audioNoun1 = document.getElementById("audioNoun1");
 const audioNoun2 = document.getElementById("audioNoun2");
@@ -39,6 +46,7 @@ const audioNoun3_3 = document.getElementById("audioNoun3_3");
 const audioNoun3_4 = document.getElementById("audioNoun3_4");
 const audioNoun3_5 = document.getElementById("audioNoun3_5");
 
+// Arrays storing the sound files for each sentence
 
 let sentence1 = [audioNoun1, audioNoun2, audioNoun3, audioNoun4, audioNoun5];
 let sentence2 = [audioVerb1, audioVerb2, audioVerb3, audioVerb4, audioVerb5];
@@ -46,13 +54,20 @@ let sentence3 = [audioAdj1, audioAdj2, audioAdj3, audioAdj4, audioAdj5];
 let sentence4 = [audioNoun2_1, audioNoun2_2, audioNoun2_3, audioNoun2_4, audioNoun2_5];
 let sentence5 = [audioNoun3_1, audioNoun3_2, audioNoun3_3, audioNoun3_4, audioNoun3_5];
 
+// Arrays containing all the words
+
 let noun1 = ["The Sun", "Dog", "Thunder", "Snow", "The Rainbow"];
 let verb = ["sets", "barks", "rumbles", "falls", "arcs"];
 let adjective = ["peacefully", "loudly", "ominously", "slowly", "gracefully"];
 let noun2 = ["behind", "in the quiet", "in the dark", "on the quiet town", "after the rain shower"];
 let noun3 = ["distant mountains", "neighbourhood", "stormy sky", "in winter", "at school"];
+
+// This delay is to make sure that the sounds are not all playing at the same time
+
 let delay = 1000;
 
+
+// Event listeners for when any of the buttons are clicked
 
 firstButton.addEventListener("click", changeFirstWord);
 
@@ -66,6 +81,8 @@ fifthButton.addEventListener("click", changeFifthWord)
 
 sixthButton.addEventListener("click", printFinalSentence)
 
+// Function for the random story that's executed when the button is clicked
+
 randomButton.addEventListener("click", function(){
     let random1 = Math.floor(Math.random() * 5);
     let random2 = Math.floor(Math.random() * 5);
@@ -77,6 +94,7 @@ randomButton.addEventListener("click", function(){
     randomSentence.textContent = noun1[random1] + ' ' + verb[random2] + ' ' + adjective[random3] + ' ' + noun2[random4] + ' ' + noun3[random5];
 
 
+    // This sets a timeout of 1000ms before each sound is played
 
     randomSound.forEach(function(audioElement, index) {
         setTimeout(function() {
@@ -85,11 +103,17 @@ randomButton.addEventListener("click", function(){
     });
 });
 
+// These are containers I specifically for the buttons, to ensure that the outputs can be looped when the buttons are clicked. This stores the position in which
+// The button was clicked, which makes it easier to know which note it was.
+
 let firstNoun = 0;
 let firstVerb = 0;
 let firstAdj = 0;
 let secondNoun = 0;
 let thirdNoun = 0;
+
+// This function runs when the button is clicked. When you click, firstNoun is increased by one, and the word is output and the sound is played.
+// But when the firstNoun is equal to 5, it immediately becomes 0.
 
 function changeFirstWord() {
     if (firstNoun === 5) {
@@ -99,6 +123,8 @@ function changeFirstWord() {
     sentence1[firstNoun].play();
     firstNoun++;
 }
+
+// Same as the first function.
 
 function changeSecondWord() {
     if (firstVerb === 5) {
@@ -135,6 +161,8 @@ function changeFifthWord() {
     sentence5[thirdNoun].play();
     thirdNoun++;
 }
+
+// This function prints the sentences when the user clicks the sixth button. It takes all the words that the user chose, and outputs them as a sound and text.
 
 function printFinalSentence(){
     finalSentence.textContent = noun1[firstNoun-1] + " " + verb[firstVerb-1] + " " + adjective[firstAdj-1] + " " + noun2[secondNoun-1] + " " + noun3[thirdNoun-1];
